@@ -1,5 +1,9 @@
 " Tebesfinwo Default Configuration
 
+"Pathogen requires
+execute pathogen#infect()
+execute pathogen#helptags()
+
 " Sets how many lines of history VIM has to remember
 set history=700
 
@@ -62,7 +66,7 @@ set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 " Colors and Fonts
-syntax enable " enable syntax processing 
+syntax on " enable syntax processing 
 
 try
     colorscheme desert
@@ -72,10 +76,12 @@ endtry
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowb
-set noswapfile
+" Backups
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
 
 " Text, tab and indent related
 set tabstop=4 " number of visual spaces per TAB
@@ -102,6 +108,17 @@ autocmd BufReadPost *
      \ endif
 " Remember info about open buffers on close
 set viminfo^=%
+
+function! JavaScriptFold() 
+    setl foldmethod=syntax
+    setl foldlevelstart=1
+    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+
+    function! FoldText()
+        return substitute(getline(v:foldstart), '{.*', '{...}', '')
+    endfunction
+    setl foldtext=FoldText()
+endfunction
 
 set number " show line number
 set showcmd " show command in bottom bar
@@ -145,8 +162,46 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
+augroup configgroup
+    autocmd!
+    autocmd VimEnter * highlight clear SignColumn
+    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
+                \:call <SID>StripTrailingWhitespaces()
+    autocmd FileType java setlocal noexpandtab
+    autocmd FileType java setlocal list
+    autocmd FileType java setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType java setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType php setlocal expandtab
+    autocmd FileType php setlocal list
+    autocmd FileType php setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType ruby setlocal tabstop=2
+    autocmd FileType ruby setlocal shiftwidth=2
+    autocmd FileType ruby setlocal softtabstop=2
+    autocmd FileType ruby setlocal commentstring=#\ %s
+    autocmd FileType python setlocal commentstring=#\ %s
+    autocmd BufEnter *.cls setlocal filetype=java
+    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+    autocmd BufEnter Makefile setlocal noexpandtab
+    autocmd BufEnter *.sh setlocal tabstop=2
+    autocmd BufEnter *.sh setlocal shiftwidth=2
+    autocmd BufWrite *.py :call DeleteTrailingWS()
+    autocmd BufWrite *.coffee :call DeleteTrailingWS()
+    autocmd BufEnter *.sh setlocal softtabstop=2
+augroup END
 
-" Pathogen requires
-execute pathogen#infect()
+" Nerd Tree
+let g:NERDTreeWinPos = "right"
+let NERDTreeIgnore = ['\.pyc$']
+let g:NERDTreeWinSize=35
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark 
+map <leader>nf :NERDTreeFind<cr>
+
+" Ctrl-P
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_map = '<c-f>'
+map <leader>j :CtrlP<cr>
+map <c-b> :CtrlPBuffer<cr>
+let g:ctrlp_max_height = 20
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'

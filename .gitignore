@@ -1,7 +1,10 @@
 # Ignore everything.
-* 
+/* 
+/*/
 
 !.gitignore
 !.vimrc
-!vim
-
+!.vim/autoload/*
+!.vim/bundle/
+!.vim/*
+!.vim
