@@ -16,3 +16,12 @@
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule ".vim/bundle/molokai"]
+	path = .vim/bundle/molokai
+	url = https://github.com/tomasr/molokai
+[submodule ".vim/colors/molokai"]
+	path = .vim/colors/molokai
+	url = https://github.com/tomasr/molokai
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown

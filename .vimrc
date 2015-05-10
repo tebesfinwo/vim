@@ -67,11 +67,7 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 
 " Colors and Fonts
 syntax on " enable syntax processing 
-
-try
-    colorscheme desert
-catch
-endtry
+let g:molokai_original = 1
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -188,10 +184,11 @@ augroup configgroup
     autocmd BufWrite *.py :call DeleteTrailingWS()
     autocmd BufWrite *.coffee :call DeleteTrailingWS()
     autocmd BufEnter *.sh setlocal softtabstop=2
+    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 augroup END
 
 " Nerd Tree
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeWinSize=35
 map <leader>nn :NERDTreeToggle<cr>
