@@ -8,3 +8,5 @@
 !.vim/bundle/
 !.vim/*
 !.vim
+!.emacs.d
+!.emacs.d/*
