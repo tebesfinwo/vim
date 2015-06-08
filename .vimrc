@@ -20,12 +20,17 @@ let mapleader = ","
 let g:mapleader = ","
 
 " Ignore compiled files
-set wildignore=*.o,*~,*.pyc
+set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
 if has("win16") || has("win32")
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 else
     set wildignore+=.git\*,.hg\*,.svn\*
 endif
+
+set background=dark
+set showmode 
+set showmatch
+set showcmd
 
 "Always show current position
 set ruler
@@ -50,6 +55,9 @@ set magic
 
 " Show matching brackets when text indicator is over them
 set showmatch 
+set matchtime=2
+set matchpairs+=<:> 
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -67,7 +75,7 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 
 " Colors and Fonts
 syntax on " enable syntax processing 
-let g:molokai_original = 1
+colorscheme solarized
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
