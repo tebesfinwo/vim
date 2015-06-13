@@ -166,6 +166,8 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
+let python_highlight_all = 1
+
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
