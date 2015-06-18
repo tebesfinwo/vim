@@ -196,7 +196,27 @@ augroup configgroup
     autocmd BufWrite *.coffee :call DeleteTrailingWS()
     autocmd BufEnter *.sh setlocal softtabstop=2
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+    " Enable spellchecking for Markdown
+    autocmd FileType markdown setlocal spell
+    " Automatically wrap at 80 characters for Markdown
+    autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Nerd Tree
 let g:NERDTreeWinPos = "left"
