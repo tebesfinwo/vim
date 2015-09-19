@@ -3,6 +3,7 @@
 /*/
 
 !.gitignore
+!.bashrc
 !.vimrc
 !.vim/autoload/*
 !.vim/bundle/
