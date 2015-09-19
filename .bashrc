@@ -37,6 +37,7 @@ NC="\e[m"               # Color Reset
 # Happy dev 
 alias cp='cp -iv'                                   # Preferred 'cp' implementation
 alias mv='mv -iv'                                   # Preferred 'mv' implementation
+alias rm='rm -iv'                                   # Preferred 'rm' implenentation
 alias mkdir='mkdir -pv'                             # Preferred 'mkdir' implementation
 alias ls="ls -FHG"
 alias ll='ls -FGlAhp'                               # Preferred 'ls' implementation
