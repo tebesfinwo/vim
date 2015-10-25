@@ -188,6 +188,11 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 # Git command completion ends
 
+# Django command completion start
+if [ -f ~/.django-completion.bash ]; then                                                                            
+  . ~/.django-completion.bash
+fi
+# Django command completion ends
 
 # Handy Extract Program
 function extract()      
