@@ -130,13 +130,6 @@ set cursorline " highlight current line
 set wildmenu " visual autocomplete for command menu 
 set paste
 
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
@@ -171,8 +164,7 @@ let python_highlight_all = 1
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
-    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
-                \:call <SID>StripTrailingWhitespaces()
+    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md :%s/\s\+$//e
     autocmd FileType java setlocal noexpandtab
     autocmd FileType java setlocal list
     autocmd FileType java setlocal listchars=tab:+\ ,eol:-
@@ -192,8 +184,6 @@ augroup configgroup
     autocmd BufEnter Makefile setlocal noexpandtab
     autocmd BufEnter *.sh setlocal tabstop=2
     autocmd BufEnter *.sh setlocal shiftwidth=2
-    autocmd BufWrite *.py :call DeleteTrailingWS()
-    autocmd BufWrite *.coffee :call DeleteTrailingWS()
     autocmd BufEnter *.sh setlocal softtabstop=2
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
     " Enable spellchecking for Markdown
