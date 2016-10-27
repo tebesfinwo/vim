@@ -149,9 +149,11 @@ start_agent() {
 
 if [ -f "${SSH_ENVIRONMENT}" ]; then
     . "${SSH_ENVIRONMENT}" > /dev/null
-    ps "${SSH_AGENT_PID}" > /dev/null || start_agent
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
 else
-    start_agent
+    start_agent;
 fi
 #
 # End ssh-agent hack.
