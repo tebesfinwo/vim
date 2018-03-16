@@ -83,6 +83,7 @@ set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupcopy=yes " Not to interfere the recompilation.
 set writebackup
 
 " Text, tab and indent related
