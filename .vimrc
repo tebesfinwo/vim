@@ -92,9 +92,10 @@ set textwidth=79 " lines longer than 79 columns will be broken
 set shiftwidth=4 " operation >> indents 4 columns; << unindents 4 columns
 set shiftround " round indent to multiple of 'shiftwidth' 
 set autoindent " align the new line indent with the previous line
+set nowrap " Disable auto-wrapping
 set ai "Auto indent
 set si "Smart indent
-set wrap "Wrap lines
+set colorcolumn=80 " Line length marker
 
 set number " show line number
 
@@ -116,6 +117,8 @@ augroup configgroup
     autocmd FileType ruby setlocal shiftwidth=2
     autocmd FileType ruby setlocal softtabstop=2
     autocmd FileType ruby setlocal commentstring=#\ %s
+    autocmd FileType python setlocal textwidth=99
+    autocmd FileType python setlocal colorcolumn=99
     autocmd FileType python setlocal commentstring=#\ %s
     autocmd FileType python setlocal completeopt-=preview
     autocmd BufEnter *.cls setlocal filetype=java
@@ -170,3 +173,5 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_python_exec = 'python'
 let g:syntastic_python_pylint_exe = 'python -m pylint'
 " let g:rustfmt_autosave = 1
+
+let python_highlight_all = 1
