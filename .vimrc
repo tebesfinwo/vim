@@ -1,8 +1,5 @@
 " Tebesfinwo Default Configuration
-
-"Pathogen requires
-execute pathogen#infect()
-execute pathogen#helptags()
+" TODO(jooi): Remove stuffs which I do not understand / rarely use.
 
 " Sets how many lines of history VIM has to remember
 set history=700
