@@ -13,5 +13,6 @@
 !.emacs.d/*
 !.git-completion.bash
 !.django-completion.bash
+!.config/nvim/init.vim
 
 .vim/.netrwhist
