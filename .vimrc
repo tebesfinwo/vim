@@ -72,8 +72,8 @@ set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 " Colors and Fonts
-syntax on " enable syntax processing
-" colorscheme solarized
+syntax on " enable syntax processing 
+colorscheme solarized
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
