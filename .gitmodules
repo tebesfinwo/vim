@@ -10,3 +10,6 @@
 [submodule ".vim/pack/my-plugins/start/vim-commentary"]
 	path = .vim/pack/my-plugins/start/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule ".vim/pack/my-plugins/start/rust.vim"]
+	path = .vim/pack/my-plugins/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
