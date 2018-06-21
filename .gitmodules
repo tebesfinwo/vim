@@ -19,3 +19,6 @@
 [submodule ".vim/pack/my-plugins/start/vim-airline"]
 	path = .vim/pack/my-plugins/start/vim-airline
 	url = git@github.com:vim-airline/vim-airline.git
+[submodule ".vim/pack/my-plugins/start/deoplete-jedi"]
+	path = .vim/pack/my-plugins/start/deoplete-jedi
+	url = git@github.com:zchee/deoplete-jedi.git
