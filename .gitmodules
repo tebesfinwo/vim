@@ -22,3 +22,6 @@
 [submodule ".vim/pack/my-plugins/start/deoplete.nvim"]
 	path = .vim/pack/my-plugins/start/deoplete.nvim
 	url = git@github.com:Shougo/deoplete.nvim.git
+[submodule ".vim/pack/my-plugins/start/vim-airline"]
+	path = .vim/pack/my-plugins/start/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
