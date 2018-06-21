@@ -227,3 +227,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_python_checkers = 1
 " let g:rustfmt_autosave = 1
+
+let python_highlight_all = 1
+
+" Deoplete for NeoVim
+let g:deoplete#enable_at_startup = 1

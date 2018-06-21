@@ -13,3 +13,12 @@
 [submodule ".vim/pack/my-plugins/start/rust.vim"]
 	path = .vim/pack/my-plugins/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule ".vim/pack/my-plugins/start/nvim-yarp"]
+	path = .vim/pack/my-plugins/start/nvim-yarp
+	url = git@github.com:roxma/nvim-yarp.git
+[submodule ".vim/pack/my-plugins/start/vim-hug-neovim-rpc"]
+	path = .vim/pack/my-plugins/start/vim-hug-neovim-rpc
+	url = git@github.com:roxma/vim-hug-neovim-rpc.git
+[submodule ".vim/pack/my-plugins/start/deoplete.nvim"]
+	path = .vim/pack/my-plugins/start/deoplete.nvim
+	url = git@github.com:Shougo/deoplete.nvim.git
