@@ -35,7 +35,7 @@ NC="\e[m"               # Color Reset
 
 shopt -s globstar
 
-# Happy dev 
+# Happy dev
 alias cp='cp -iv'                                   # Preferred 'cp' implementation
 alias mv='mv -iv'                                   # Preferred 'mv' implementation
 alias rm='rm -iv'                                   # Preferred 'rm' implenentation
@@ -157,7 +157,7 @@ fi
 # End ssh-agent hack.
 #
 
-# pip bash completion start                                                                                       
+# pip bash completion start
 _pip_completion()
 {
     COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
@@ -165,7 +165,7 @@ _pip_completion()
                    PIP_AUTO_COMPLETE=1 $1 ) )
 }
 
-complete -o default -F _pip_completion pip 
+complete -o default -F _pip_completion pip
 # pip bash completion end
 
 
@@ -184,19 +184,19 @@ function swap()
 
 
 # Git command completion start
-if [ -f ~/.git-completion.bash ]; then                                                                            
+if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 # Git command completion ends
 
 # Django command completion start
-if [ -f ~/.django-completion.bash ]; then                                                                            
+if [ -f ~/.django-completion.bash ]; then
   . ~/.django-completion.bash
 fi
 # Django command completion ends
 
 # Handy Extract Program
-function extract()      
+function extract()
 {
     if [ -f $1 ] ; then
         case $1 in
