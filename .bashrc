@@ -1,5 +1,5 @@
 export PYTHONSTARTUP=~/.pythonrc
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/local/bin/nvim
 
 # Normal Colors
 Black='\e[0;30m'        # Black
