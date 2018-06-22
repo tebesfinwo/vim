@@ -26,7 +26,7 @@ else
 endif
 
 set background=dark
-set showmode 
+set showmode
 set showmatch
 set showcmd
 
@@ -36,25 +36,25 @@ set ruler
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 set matchtime=2
-set matchpairs+=<:> 
+set matchpairs+=<:>
 
 " How many tenths of a second to blink when matching brackets
 set mat=2
@@ -72,8 +72,8 @@ set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 " Colors and Fonts
-syntax on " enable syntax processing 
-colorscheme solarized
+syntax on " enable syntax processing
+" colorscheme solarized
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -89,9 +89,9 @@ set writebackup
 set tabstop=4 " number of visual spaces per TAB
 set softtabstop=4 " number of spaces in tab when editing
 set expandtab " tabs are spaces
-set textwidth=79 " lines longer than 79 columns will be broken 
+set textwidth=79 " lines longer than 79 columns will be broken
 set shiftwidth=4 " operation >> indents 4 columns; << unindents 4 columns
-set shiftround " round indent to multiple of 'shiftwidth' 
+set shiftround " round indent to multiple of 'shiftwidth'
 set autoindent " align the new line indent with the previous line
 set ai "Auto indent
 set si "Smart indent
@@ -111,7 +111,7 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
-function! JavaScriptFold() 
+function! JavaScriptFold()
     setl foldmethod=syntax
     setl foldlevelstart=1
     syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
@@ -125,7 +125,7 @@ endfunction
 set number " show line number
 set showcmd " show command in bottom bar
 set cursorline " highlight current line
-set wildmenu " visual autocomplete for command menu 
+set wildmenu " visual autocomplete for command menu
 set paste
 
 " Returns true if paste mode is enabled
@@ -205,7 +205,7 @@ let g:NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeWinSize=35
 map <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark 
+map <leader>nb :NERDTreeFromBookmark
 map <leader>nf :NERDTreeFind<cr>
 
 " Ctrl-P
