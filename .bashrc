@@ -33,6 +33,7 @@ On_White='\e[47m'       # White
 
 NC="\e[m"               # Color Reset
 
+shopt -s globstar
 
 # Happy dev 
 alias cp='cp -iv'                                   # Preferred 'cp' implementation
