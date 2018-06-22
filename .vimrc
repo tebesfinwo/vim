@@ -96,7 +96,6 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 set number " show line number
-set paste
 
 let python_highlight_all = 1
 
