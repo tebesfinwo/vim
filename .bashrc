@@ -1,5 +1,6 @@
-export PYTHONSTARTUP=~/.pythonrc
 export EDITOR=/usr/local/bin/nvim
+export PYENV_ROOT="$HOME/.pyenv
+export PATH="$PYENV_ROOT/bin:$PATH
 
 # Normal Colors
 Black='\e[0;30m'        # Black
