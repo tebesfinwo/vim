@@ -126,6 +126,9 @@ augroup configgroup
     autocmd BufEnter *.hy setlocal tabstop=2
     autocmd BufEnter *.hy setlocal shiftwidth=2
     autocmd BufEnter *.hy setlocal softtabstop=2
+    autocmd BufEnter *.js setlocal tabstop=2
+    autocmd BufEnter *.js setlocal shiftwidth=2
+    autocmd BufEnter *.js setlocal softtabstop=2
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
     " Enable spellchecking for Markdown
     autocmd FileType markdown setlocal spell
