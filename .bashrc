@@ -238,4 +238,4 @@ function _exit()
 trap _exit EXIT
 # End
 
-alias did="nvim +'normal Go' +'r!date' ~/did.txt"
+alias did="nvim +'normal Go' +'r!date' ~/did.md"
