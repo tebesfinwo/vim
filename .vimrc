@@ -132,6 +132,9 @@ augroup configgroup
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
     " Enable spellchecking for Markdown
     autocmd FileType markdown setlocal spell
+    autocmd FileType markdown setlocal tabstop=2
+    autocmd FileType markdown setlocal shiftwidth=2
+    autocmd FileType markdown setlocal softtabstop=2
     " Automatically wrap at 80 characters for Markdown
     autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
