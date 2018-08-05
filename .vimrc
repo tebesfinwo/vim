@@ -117,6 +117,7 @@ augroup configgroup
     autocmd FileType ruby setlocal commentstring=#\ %s
     autocmd FileType python setlocal commentstring=#\ %s
     autocmd FileType python setlocal completeopt-=preview
+    autocmd FileType python setlocal textwidth=119
     autocmd BufEnter *.cls setlocal filetype=java
     autocmd BufEnter *.zsh-theme setlocal filetype=zsh
     autocmd BufEnter Makefile setlocal noexpandtab
