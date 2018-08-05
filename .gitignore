@@ -10,8 +10,6 @@
 !.vim/bundle/
 !.vim/*
 !.vim
-!.emacs.d
-!.emacs.d/*
 !.git-completion.bash
 !.django-completion.bash
 !.config/nvim/init.vim
