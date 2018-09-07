@@ -3,25 +3,25 @@
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule ".vim/pack/my-plugins/start/ctrlp.vim"]
 	path = .vim/pack/my-plugins/start/ctrlp.vim
-	url = git@github.com:ctrlpvim/ctrlp.vim.git
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule ".vim/pack/my-plugins/start/vim-commentary"]
 	path = .vim/pack/my-plugins/start/vim-commentary
-	url = git@github.com:tpope/vim-commentary.git
+	url = https://github.com/tpope/vim-commentary.git
 [submodule ".vim/pack/my-plugins/start/rust.vim"]
 	path = .vim/pack/my-plugins/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
 [submodule ".vim/pack/my-plugins/start/nvim-yarp"]
 	path = .vim/pack/my-plugins/start/nvim-yarp
-	url = git@github.com:roxma/nvim-yarp.git
+	url = https://github.com/roxma/nvim-yarp.git
 [submodule ".vim/pack/my-plugins/start/vim-hug-neovim-rpc"]
 	path = .vim/pack/my-plugins/start/vim-hug-neovim-rpc
-	url = git@github.com:roxma/vim-hug-neovim-rpc.git
+	url = https://github.com/roxma/vim-hug-neovim-rpc.git
 [submodule ".vim/pack/my-plugins/start/deoplete.nvim"]
 	path = .vim/pack/my-plugins/start/deoplete.nvim
-	url = git@github.com:Shougo/deoplete.nvim.git
+	url = https://github.com/Shougo/deoplete.nvim.git
 [submodule ".vim/pack/my-plugins/start/vim-airline"]
 	path = .vim/pack/my-plugins/start/vim-airline
-	url = git@github.com:vim-airline/vim-airline.git
+	url = https://github.com/vim-airline/vim-airline.git
 [submodule ".vim/pack/my-plugins/vim-hy"]
 	path = .vim/pack/my-plugins/vim-hy
-	url = git@github.com:hylang/vim-hy.git
+	url = https://github.com/hylang/vim-hy.git
