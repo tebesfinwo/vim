@@ -6,10 +6,6 @@
 !.gitignore
 !.bashrc
 !.vimrc
-!.vim/autoload/*
-!.vim/bundle/
-!.vim/*
-!.vim
 !.git-completion.bash
 !.django-completion.bash
 !.config/nvim/init.vim
