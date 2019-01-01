@@ -6,6 +6,8 @@
 !.gitignore
 !.gitconfig
 !.bashrc
+!.vim/*
+!.vim
 !.vimrc
 !.git-completion.bash
 !.django-completion.bash
