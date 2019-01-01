@@ -25,3 +25,6 @@
 [submodule ".vim/pack/my-plugins/start/deoplete-jedi"]
 	path = .vim/pack/my-plugins/start/deoplete-jedi
 	url = https://github.com/zchee/deoplete-jedi
+[submodule ".vim/pack/my-plugins/start/ale"]
+	path = .vim/pack/my-plugins/start/ale
+	url = https://github.com/w0rp/ale.git

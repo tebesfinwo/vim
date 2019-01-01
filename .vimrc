@@ -158,6 +158,15 @@ let g:deoplete#omni#input_patterns.reason = '[.\w]+'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>": "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>": "\<S-Tab>"
 
+" Ale
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace']
+\}
+let g:ale_fix_on_save = 1
+
+" Airline
+let g:airline#extensions#ale#enabled = 1
+
 let g:python_host_prog = "/usr/local/bin/python"
 let g:python3_host_prog = "/usr/local/bin/python3"
 
@@ -192,3 +201,7 @@ for tool in s:opam_packages
     call s:opam_configuration[tool]()
   endif
 endfor
+
+" Related to Ale
+packloadall
+silent! helptags ALL
