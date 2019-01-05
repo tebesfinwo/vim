@@ -136,9 +136,7 @@ nnoremap <C-l> <C-w>l
 let g:NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeWinSize=35
-map <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark
-map <leader>nf :NERDTreeFind<cr>
+map <C-n> :NERDTreeToggle<CR>
 
 " Ctrl-P
 let g:ctrlp_working_path_mode = 0
