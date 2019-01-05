@@ -1,4 +1,5 @@
 call plug#begin(expand('~/.config/nvim/plugged'))
+    Plug 'iCyMind/NeoSolarized'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'tpope/vim-commentary'
     Plug 'rust-lang/rust.vim'
@@ -49,8 +50,8 @@ set tm=500
 set t_vb=
 
 syntax on " enable syntax processing
-" set colorscheme = "solarized"
 set termguicolors
+colorscheme NeoSolarized
 
 set backup
 set backupcopy=yes " Not to interfere the recompilation.
