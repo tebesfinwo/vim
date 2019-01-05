@@ -31,3 +31,6 @@
 [submodule ".vim/pack/my-plugins/start/vim-tmux-navigator"]
 	path = .vim/pack/my-plugins/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule ".vim/pack/my-plugins/start/intero-neovim"]
+	path = .vim/pack/my-plugins/start/intero-neovim
+	url = https://github.com/parsonsmatt/intero-neovim.git
