@@ -1,5 +1,5 @@
 # Ignore everything.
-/* 
+/*
 /*/
 
 !README.md
@@ -12,5 +12,6 @@
 !.git-completion.bash
 !.django-completion.bash
 !.config/nvim/init.vim
+!.tmux.conf
 
 .vim/.netrwhist
