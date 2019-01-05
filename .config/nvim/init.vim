@@ -1,5 +1,17 @@
-filetype plugin on
-filetype indent on
+call plug#begin(expand('~/.config/nvim/plugged'))
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'tpope/vim-commentary'
+    Plug 'rust-lang/rust.vim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'w0rp/ale'
+    Plug 'christoomey/vim-tmux-navigator'
+    Plug 'parsonsmatt/intero-neovim'
+    Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+    Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+    Plug 'zchee/deoplete-jedi'
+call plug#end()
+
+filetype plugin indent on
 
 let mapleader = ","
 let g:mapleader = ","
