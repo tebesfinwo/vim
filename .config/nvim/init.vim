@@ -1,5 +1,7 @@
 call plug#begin(expand('~/.config/nvim/plugged'))
-    Plug 'iCyMind/NeoSolarized'
+    Plug 'joshdick/onedark.vim'
+    Plug 'sheerun/vim-polyglot'
+
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'tpope/vim-commentary'
     Plug 'rust-lang/rust.vim'
@@ -49,9 +51,18 @@ set smartcase
 set tm=500
 set t_vb=
 
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
 syntax on " enable syntax processing
-set termguicolors
-colorscheme NeoSolarized
+colorscheme onedark
 
 set backup
 set backupcopy=yes " Not to interfere the recompilation.
@@ -144,6 +155,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" One dark theme
+let g:onedark_termcolors=256
+
 " Nerd Tree
 let g:NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\.pyc$']
@@ -179,6 +193,7 @@ let g:ale_fix_on_save = 1
 
 " Airline
 let g:airline#extensions#ale#enabled = 1
+let g:airline_theme = 'onedark'
 
 let g:python_host_prog = "/usr/local/bin/python"
 let g:python3_host_prog = "/usr/local/bin/python3"
