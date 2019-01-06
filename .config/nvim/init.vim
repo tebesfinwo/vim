@@ -16,13 +16,13 @@ call plug#end()
 
 filetype plugin indent on
 
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = ','
+let g:mapleader = ','
 
 " Ignore compiled files
 set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
 
-if has("win16") || has("win32")
+if has('win16') || has('win32')
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 else
     set wildignore+=.git\*,.hg\*,.svn\*
@@ -52,11 +52,11 @@ set tm=500
 set t_vb=
 
 if (empty($TMUX))
-  if (has("nvim"))
+  if (has('nvim'))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   endif
 
-  if (has("termguicolors"))
+  if (has('termguicolors'))
     set termguicolors
   endif
 endif
@@ -159,7 +159,7 @@ nnoremap <C-l> <C-w>l
 let g:onedark_termcolors=256
 
 " Nerd Tree
-let g:NERDTreeWinPos = "left"
+let g:NERDTreeWinPos = 'left'
 let NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeWinSize=35
 map <C-n> :NERDTreeToggle<CR>
@@ -179,8 +179,8 @@ let g:deoplete#auto_complete_start_length = 1
 let g:deoplete#omni#input_patterns = {}
 let g:deoplete#omni#input_patterns.ocaml = '[.\w]+'
 let g:deoplete#omni#input_patterns.reason = '[.\w]+'
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>": "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>": "\<S-Tab>"
+inoremap <expr> <Tab> pumvisible() ? '\<C-n>': '\<Tab>'
+inoremap <expr> <S-Tab> pumvisible() ? '\<C-p>': '\<S-Tab>'
 
 " Ale
 let g:ale_fixers = {
@@ -195,8 +195,8 @@ let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline_theme = 'onedark'
 
-let g:python_host_prog = "/usr/local/bin/python"
-let g:python3_host_prog = "/usr/local/bin/python3"
+let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Intero
 au BufWritePost *.hs InteroReload
@@ -233,29 +233,29 @@ au FileType haskell nnoremap <leader>nt :InteroSetTargets<CR>
 
 
 " OPAM
-let s:opam_share_dir = system("opam config var share")
+let s:opam_share_dir = system('opam config var share')
 let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
 
 let s:opam_configuration = {}
 
 function! OpamConfOcpIndent()
-  execute "set rtp^=" . s:opam_share_dir . "/ocp-indent/vim"
+  execute 'set rtp^=' . s:opam_share_dir . '/ocp-indent/vim'
 endfunction
 let s:opam_configuration['ocp-indent'] = function('OpamConfOcpIndent')
 
 function! OpamConfOcpIndex()
-  execute "set rtp+=" . s:opam_share_dir . "/ocp-index/vim"
+  execute 'set rtp+=' . s:opam_share_dir . '/ocp-index/vim'
 endfunction
 let s:opam_configuration['ocp-index'] = function('OpamConfOcpIndex')
 
 function! OpamConfMerlin()
-  let l:dir = s:opam_share_dir . "/merlin/vim"
-  execute "set rtp+=" . l:dir
+  let l:dir = s:opam_share_dir . '/merlin/vim'
+  execute 'set rtp+=' . l:dir
 endfunction
 let s:opam_configuration['merlin'] = function('OpamConfMerlin')
 
-let s:opam_packages = ["ocp-indent", "ocp-index", "merlin"]
-let s:opam_check_cmdline = ["opam list --installed --short --safe --color=never"] + s:opam_packages
+let s:opam_packages = ['ocp-indent', 'ocp-index', 'merlin']
+let s:opam_check_cmdline = ['opam list --installed --short --safe --color=never'] + s:opam_packages
 let s:opam_available_tools = split(system(join(s:opam_check_cmdline)))
 for tool in s:opam_packages
   " Respect package order (merlin should be after ocp-index)
