@@ -198,6 +198,12 @@ let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Intero
+" Navigating of terminal panel
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
+
 au BufWritePost *.hs InteroReload
 
 " Lookup the type of expression under the cursor
