@@ -179,8 +179,7 @@ let g:deoplete#auto_complete_start_length = 1
 let g:deoplete#omni#input_patterns = {}
 let g:deoplete#omni#input_patterns.ocaml = '[.\w]+'
 let g:deoplete#omni#input_patterns.reason = '[.\w]+'
-inoremap <expr> <Tab> pumvisible() ? '\<C-n>': '\<Tab>'
-inoremap <expr> <S-Tab> pumvisible() ? '\<C-p>': '\<S-Tab>'
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Ale
 let g:ale_fixers = {
