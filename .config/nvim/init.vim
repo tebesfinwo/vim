@@ -237,7 +237,3 @@ au FileType haskell nnoremap <silent> <leader>nr :InteroKill<CR> :InteroOpen<CR>
 " Managing targets
 " Prompts you to enter targets (no silent):
 au FileType haskell nnoremap <leader>nt :InteroSetTargets<CR>
-
-" Related to Ale
-packloadall
-silent! helptags ALL
