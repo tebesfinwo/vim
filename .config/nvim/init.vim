@@ -200,6 +200,10 @@ let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Intero
+let g:intero_start_immediately = 0
+let g:intero_type_on_hover = 1
+let g:intero_window_size = 15
+
 " Navigating of terminal panel
 tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
@@ -207,7 +211,7 @@ tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
 augroup interogroup
-    au BufWritePost *.hs InteroReload
+    au BufWritePost *.hs InteroReload " TODO(jooi): Should only work when Intero is loaded.
     au FileType haskell nmap <silent> <leader>t <Plug>InteroGenericType
     au FileType haskell nmap <silent> <leader>T <Plug>InteroType
     au FileType haskell nnoremap <silent> <leader>ni :InteroTypeInsert<CR>
