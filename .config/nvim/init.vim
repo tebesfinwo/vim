@@ -210,8 +210,16 @@ tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
+let g:intero_initialized = 0
+function! s:reload_intero_if_done()
+	if g:intero_initialized
+		call intero#repl#reload()
+	endif
+endfunction
+
 augroup interogroup
-    au BufWritePost *.hs InteroReload " TODO(jooi): Should only work when Intero is loaded.
+    au!
+    au BufWritePost *.hs call s:reload_intero_if_done()
     au FileType haskell nmap <silent> <leader>t <Plug>InteroGenericType
     au FileType haskell nmap <silent> <leader>T <Plug>InteroType
     au FileType haskell nnoremap <silent> <leader>ni :InteroTypeInsert<CR>
