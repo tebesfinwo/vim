@@ -186,7 +186,8 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace']
 \}
 let g:ale_linters = {
-\   'haskell': ['stack-ghc-mod', 'hlint']
+\   'haskell': ['stack-ghc-mod', 'hlint'],
+\   'python': ['pyflakes']
 \}
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_fix_on_save = 1
