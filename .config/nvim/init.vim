@@ -1,5 +1,5 @@
 call plug#begin(expand('~/.config/nvim/plugged'))
-    Plug 'joshdick/onedark.vim'
+    Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'sheerun/vim-polyglot'
 
     Plug 'ctrlpvim/ctrlp.vim'
@@ -62,7 +62,7 @@ if (empty($TMUX))
 endif
 
 syntax on " enable syntax processing
-colorscheme onedark
+color dracula
 
 set backup
 set backupcopy=yes " Not to interfere the recompilation.
