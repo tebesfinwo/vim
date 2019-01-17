@@ -2,14 +2,16 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'sheerun/vim-polyglot'
 
-    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'junegunn/fzf'
     Plug 'tpope/vim-commentary'
-    Plug 'rust-lang/rust.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'w0rp/ale'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'parsonsmatt/intero-neovim'
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+
+    Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+
     Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
     Plug 'zchee/deoplete-jedi'
 call plug#end()
@@ -213,9 +215,9 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 
 let g:intero_initialized = 0
 function! s:reload_intero_if_done()
-	if g:intero_initialized
-		call intero#repl#reload()
-	endif
+    if g:intero_initialized
+        call intero#repl#reload()
+    endif
 endfunction
 
 augroup interogroup
