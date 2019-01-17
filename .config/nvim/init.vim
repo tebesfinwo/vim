@@ -197,7 +197,7 @@ let g:ale_lint_on_enter = 0
 
 " Airline
 let g:airline#extensions#ale#enabled = 1
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'dracula'
 
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
