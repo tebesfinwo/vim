@@ -188,12 +188,18 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace']
 \}
 let g:ale_linters = {
+\   'bash': ['language_server'],
 \   'haskell': ['stack-ghc-mod', 'hlint'],
 \   'python': ['pyflakes']
 \}
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_enter = 0
+
+" Language client server
+let g:LanguageClient_serverCommands = {
+\   'sh': ['bash-language-server', 'start']
+\}
 
 " Airline
 let g:airline#extensions#ale#enabled = 1
