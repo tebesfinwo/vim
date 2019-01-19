@@ -14,5 +14,6 @@
 !.django-completion.bash
 !.config/nvim/init.vim
 !.tmux.conf
+!Makefile
 
 .vim/.netrwhist
