@@ -5,7 +5,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'junegunn/fzf'
     Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
-    Plug 'w0rp/ale'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'parsonsmatt/intero-neovim'
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
@@ -175,26 +174,12 @@ let g:deoplete#omni#input_patterns.ocaml = '[.\w]+'
 let g:deoplete#omni#input_patterns.reason = '[.\w]+'
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-" Ale
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace']
-\}
-let g:ale_linters = {
-\   'bash': ['language_server'],
-\   'haskell': ['stack-ghc-mod', 'hlint'],
-\   'python': ['pyflakes']
-\}
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_fix_on_save = 1
-let g:ale_lint_on_enter = 0
-
 " Language client server
 let g:LanguageClient_serverCommands = {
 \   'sh': ['bash-language-server', 'start']
 \}
 
 " Airline
-let g:airline#extensions#ale#enabled = 1
 let g:airline_theme = 'dracula'
 
 let g:python_host_prog = '/usr/local/bin/python'
