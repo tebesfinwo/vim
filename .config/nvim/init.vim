@@ -176,7 +176,9 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Language client server
 let g:LanguageClient_serverCommands = {
-\   'sh': ['bash-language-server', 'start']
+\   'sh': ['bash-language-server', 'start'],
+\   'haskell': ['hie-wrapper'],
+\   'python': ['pyls']
 \}
 
 " Airline
