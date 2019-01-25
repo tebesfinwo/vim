@@ -12,7 +12,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
     Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-    Plug 'zchee/deoplete-jedi'
 call plug#end()
 
 filetype plugin indent on
