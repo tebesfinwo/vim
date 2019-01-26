@@ -188,6 +188,12 @@ map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
 " Airline
 let g:airline_theme = 'dracula'
 
+" fzf
+let g:fzf_action = {
+\   'ctrl-t': 'tab split',
+\   'ctrl-x': 'split',
+\   'ctrl-v': 'vsplit' }
+
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
