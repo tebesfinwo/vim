@@ -155,9 +155,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" One dark theme
-let g:onedark_termcolors=256
-
 " Nerd Tree
 let g:NERDTreeWinPos = 'left'
 let NERDTreeIgnore = ['\.pyc$']
