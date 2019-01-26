@@ -171,6 +171,7 @@ let g:deoplete#omni#input_patterns.reason = '[.\w]+'
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Language client server
+let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
 \   'sh': ['bash-language-server', 'start'],
 \   'haskell': ['hie-wrapper'],
