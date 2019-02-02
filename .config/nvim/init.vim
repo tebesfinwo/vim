@@ -91,7 +91,7 @@ let python_highlight_all = 1
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
-    autocmd FileType c,cpp,python,php autocmd BufWritePre <buffer> %s/\s\+$//e
+    autocmd FileType c,cpp,haskell,python,php autocmd BufWritePre <buffer> %s/\s\+$//e
 
     autocmd FileType java setlocal noexpandtab
     autocmd FileType java setlocal list
