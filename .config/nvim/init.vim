@@ -8,6 +8,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'parsonsmatt/intero-neovim'
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+    Plug 'neomake/neomake'
 
     Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
