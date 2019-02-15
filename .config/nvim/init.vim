@@ -203,12 +203,6 @@ let g:intero_start_immediately = 0
 let g:intero_type_on_hover = 1
 let g:intero_window_size = 15
 
-" Navigating of terminal panel
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
-
 augroup interogroup
     au!
     au BufWritePost *.hs InteroReload
@@ -226,3 +220,9 @@ augroup interogroup
     au FileType haskell nnoremap <silent> <leader>nr :InteroKill<CR> :InteroOpen<CR>
     au FileType haskell nnoremap <leader>nt :InteroSetTargets<CR>
 augroup END
+
+" Navigating of terminal panel
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
