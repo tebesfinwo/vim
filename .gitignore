@@ -6,6 +6,8 @@
 !did.md
 !.gitignore
 !.gitconfig
+!.gitmodules
+!.tmux/*
 !.bashrc
 !.vim/*
 !.vim
