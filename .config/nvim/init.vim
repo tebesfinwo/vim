@@ -171,12 +171,17 @@ let g:deoplete#omni#input_patterns.reason = '[.\w]+'
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Language client server
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
 \   'sh': ['bash-language-server', 'start'],
 \   'haskell': ['hie-wrapper'],
 \   'python': ['pyls']
 \}
+
 map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
 map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
 map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
