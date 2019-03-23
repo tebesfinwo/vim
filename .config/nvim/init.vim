@@ -51,6 +51,9 @@ set smartcase
 set tm=500
 set t_vb=
 
+" Neovim 0.4.x
+set wildoptions=pum
+
 if (empty($TMUX))
   if (has('nvim'))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
