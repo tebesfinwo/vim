@@ -6,7 +6,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
     Plug 'christoomey/vim-tmux-navigator'
-    Plug 'parsonsmatt/intero-neovim'
+    Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
     Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
@@ -204,29 +204,6 @@ let g:fzf_action = {
 
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
-
-" Intero
-let g:intero_start_immediately = 0
-let g:intero_type_on_hover = 1
-let g:intero_window_size = 15
-
-augroup interogroup
-    au!
-    au BufWritePost *.hs InteroReload
-    au FileType haskell nmap <silent> <leader>t <Plug>InteroGenericType
-    au FileType haskell nmap <silent> <leader>T <Plug>InteroType
-    au FileType haskell nnoremap <silent> <leader>ni :InteroTypeInsert<CR>
-    au FileType haskell nnoremap <silent> <leader>i :InteroInfo<CR>
-    au FileType haskell nnoremap <silent> <leader>nn :InteroOpen<CR>
-    au FileType haskell nnoremap <silent> <leader>nh :InteroHide<CR>
-    au FileType haskell nnoremap <silent> <leader>nf :InteroLoadCurrentFile<CR>
-    au FileType haskell nnoremap <silent> <leader>ng :InteroGoToDef<CR>
-    au FileType haskell nnoremap <silent> <leader>ne :InteroEval<CR>
-    au FileType haskell nnoremap <silent> <leader>ns :InteroStart<CR>
-    au FileType haskell nnoremap <silent> <leader>nk :InteroKill<CR>
-    au FileType haskell nnoremap <silent> <leader>nr :InteroKill<CR> :InteroOpen<CR>
-    au FileType haskell nnoremap <leader>nt :InteroSetTargets<CR>
-augroup END
 
 " Navigating of terminal panel
 tnoremap <C-h> <C-\><C-n><C-w>h
