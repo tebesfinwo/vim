@@ -28,9 +28,16 @@ else
     set wildignore+=.git\*,.hg\*,.svn\*
 endif
 
+set autoindent
 set autoread
-set background=dark
+set backspace=indent,eol,start
+set backup
+set backupcopy=yes " Not to interfere the recompilation.
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set encoding=utf8
+set expandtab
 set history=700
 set hlsearch
 set ignorecase
@@ -43,50 +50,33 @@ set matchpairs+=<:>
 set matchtime=2
 set noerrorbells
 set novisualbell
+set number
 set ruler
+set shiftround
+set shiftwidth=4
 set showcmd
 set showmatch
 set showmode
-set smartcase
-set tm=500
-set t_vb=
-
-" Neovim 0.4.x
-set wildoptions=pum
-
-if (empty($TMUX))
-  if (has('nvim'))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-
-  if (has('termguicolors'))
-    set termguicolors
-  endif
-endif
-
-syntax on " enable syntax processing
-color dracula
-
-set backup
-set backupcopy=yes " Not to interfere the recompilation.
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set writebackup
-
-set autoindent
-set backspace=indent,eol,start
-set expandtab
-set number
-set shiftround
-set shiftwidth=4
 set si
+set smartcase
 set softtabstop=4
 set splitbelow
 set splitright
 set tabstop=4
 set textwidth=79
+set tm=500
 set wrap
+set writebackup
+set t_ut=
+
+" Neovim 0.4.x
+set wildoptions=pum
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
+
+syntax on " enable syntax processing
+colorscheme dracula
 
 let python_highlight_all = 1
 
