@@ -1,4 +1,5 @@
 export EDITOR=/usr/local/bin/nvim
+export TERM=xterm-256color
 
 # shopt -s globstar
 
