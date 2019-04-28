@@ -11,6 +11,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 
     Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
+    Plug 'Shougo/echodoc.vim'
     Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 
     Plug 'rizzatti/dash.vim'
@@ -142,6 +143,8 @@ augroup configgroup
     autocmd FileType markdown setlocal shiftwidth=2
     autocmd FileType markdown setlocal softtabstop=2
     autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+    autocmd FileType python,haskell call SetLSPShortcuts()
 augroup END
 
 
@@ -177,13 +180,24 @@ let g:LanguageClient_serverCommands = {
 \   'python': ['pyls']
 \}
 
-map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
-map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
-map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
-map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
-map <Leader>lb :call LanguageClient#textDocument_references()<CR>
-map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
-map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
+function SetLSPShortcuts()
+  nnoremap <Leader>le :call LanguageClient#explainErrorAtPoint()<CR>
+  nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
+  nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
+  nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
+  nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
+  nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
+  nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
+  nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
+  nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
+  nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
+  nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
+endfunction()
+
+" echodoc
+set cmdheight=2
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'signature'
 
 " Airline
 let g:airline_theme = 'dracula'
