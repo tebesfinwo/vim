@@ -9,10 +9,9 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
-    Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-
-    Plug 'Shougo/echodoc.vim'
     Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
     Plug 'rizzatti/dash.vim'
 call plug#end()
@@ -38,9 +37,11 @@ set backup
 set backupcopy=yes " Not to interfere the recompilation.
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
+set cmdheight=2
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set encoding=utf8
 set expandtab
+set hidden
 set history=700
 set hlsearch
 set ignorecase
@@ -61,6 +62,7 @@ set showcmd
 set showmatch
 set showmode
 set si
+set signcolumn=yes
 set smartcase
 set softtabstop=4
 set splitbelow
@@ -68,9 +70,10 @@ set splitright
 set tabstop=4
 set textwidth=79
 set tm=500
+set t_ut=
+set updatetime=300
 set wrap
 set writebackup
-set t_ut=
 
 " Neovim 0.4.x
 set wildoptions=pum
@@ -144,7 +147,7 @@ augroup configgroup
     autocmd FileType markdown setlocal softtabstop=2
     autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
-    autocmd FileType python,haskell call SetLSPShortcuts()
+    autocmd FileType json syntax match Comment +\/\/.\+$+
 augroup END
 
 
@@ -166,41 +169,100 @@ let g:deoplete#auto_complete_start_length = 1
 let g:deoplete#omni#input_patterns = {}
 let g:deoplete#omni#input_patterns.ocaml = '[.\w]+'
 let g:deoplete#omni#input_patterns.reason = '[.\w]+'
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-" Language client server
+" coc.nvim
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" Required for operations modifying multiple buffers like rename.
-set hidden
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-\   'sh': ['bash-language-server', 'start'],
-\   'haskell': ['hie-wrapper'],
-\   'python': ['pyls']
-\}
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
 
-function SetLSPShortcuts()
-  nnoremap <Leader>le :call LanguageClient#explainErrorAtPoint()<CR>
-  nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
-  nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
-  nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-  nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
-  nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
-  nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-  nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
-  nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
-  nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
-endfunction()
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" echodoc
-set cmdheight=2
-let g:echodoc#enable_at_startup = 1
-let g:echodoc#type = 'signature'
+" Use `[c` and `]c` to navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
 
 " Airline
 let g:airline_theme = 'dracula'
+
+" coc.nvim
+let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
 " fzf
 let g:fzf_action = {

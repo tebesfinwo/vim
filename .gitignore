@@ -2,8 +2,6 @@
 /*
 /*/
 
-!README.md
-!did.md
 !.gitignore
 !.gitconfig
 !.gitmodules
@@ -14,8 +12,10 @@
 !.vimrc
 !.git-completion.bash
 !.django-completion.bash
+!.config/nvim/coc-settings.json
 !.config/nvim/init.vim
 !.tmux.conf
+!.emacs.d/
 !Makefile
 
 .vim/.netrwhist
