@@ -2,6 +2,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'sheerun/vim-polyglot'
 
+    Plug 'tpope/vim-fugitive'
     Plug 'junegunn/fzf'
     Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
