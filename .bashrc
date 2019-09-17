@@ -1,4 +1,4 @@
-export EDITOR=/usr/local/bin/vimr
+export EDITOR=/usr/local/bin/nvim
 export TERM=xterm-256color
 
 #
