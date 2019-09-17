@@ -10,7 +10,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 
     Plug 'rizzatti/dash.vim'
 call plug#end()
