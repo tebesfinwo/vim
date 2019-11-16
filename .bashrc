@@ -60,3 +60,6 @@ if type brew &>/dev/null; then
   fi
 fi
 # Brew packages command completion end
+
+# Pipx autocompletion
+eval "$(register-python-argcomplete pipx)"
