@@ -1,8 +1,7 @@
 call plug#begin(expand('~/.config/nvim/plugged'))
+    Plug 'ryanoasis/vim-devicons'
     Plug 'dracula/vim', { 'as': 'dracula' }
-    Plug 'sheerun/vim-polyglot'
 
-    Plug 'tpope/vim-fugitive'
     Plug 'junegunn/fzf'
     Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
@@ -10,7 +9,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
     Plug 'rizzatti/dash.vim'
 call plug#end()
@@ -21,13 +20,7 @@ let mapleader = ','
 let g:mapleader = ','
 
 " Ignore compiled files
-set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
-
-if has('win16') || has('win32')
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-else
-    set wildignore+=.git\*,.hg\*,.svn\*
-endif
+set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn,.git\*,.hg\*,.svn\*
 
 set autoindent
 set autoread
