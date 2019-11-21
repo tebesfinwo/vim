@@ -59,6 +59,8 @@ set wrap
 
 " Neovim 0.4.x
 set wildoptions=pum
+set winblend=30
+set pumblend=40
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
