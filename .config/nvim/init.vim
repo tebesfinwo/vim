@@ -73,22 +73,7 @@ let python_highlight_all = 1
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
-    autocmd FileType c,cpp,haskell,python,php autocmd BufWritePre <buffer> %s/\s\+$//e
-
-    autocmd FileType java setlocal noexpandtab
-    autocmd FileType java setlocal list
-    autocmd FileType java setlocal listchars=tab:+\ ,eol:-
-    autocmd FileType java setlocal formatprg=par\ -w80\ -T4
-
-    autocmd FileType php setlocal expandtab
-    autocmd FileType php setlocal list
-    autocmd FileType php setlocal listchars=tab:+\ ,eol:-
-    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
-
-    autocmd FileType ruby setlocal tabstop=2
-    autocmd FileType ruby setlocal shiftwidth=2
-    autocmd FileType ruby setlocal softtabstop=2
-    autocmd FileType ruby setlocal commentstring=#\ %s
+    autocmd FileType haskell,python autocmd BufWritePre <buffer> %s/\s\+$//e
 
     autocmd FileType python setlocal commentstring=#\ %s
     autocmd FileType python setlocal completeopt-=preview
@@ -103,10 +88,6 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal tabstop=2
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
-
-    autocmd BufEnter *.hy setlocal tabstop=2
-    autocmd BufEnter *.hy setlocal shiftwidth=2
-    autocmd BufEnter *.hy setlocal softtabstop=2
 
     autocmd BufEnter *.js setlocal tabstop=2
     autocmd BufEnter *.js setlocal shiftwidth=2

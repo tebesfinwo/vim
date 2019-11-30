@@ -1,2 +1,0 @@
-VimRToggleFullscreen
-VimRMaximizeWindow
