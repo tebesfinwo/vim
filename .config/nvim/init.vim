@@ -33,10 +33,7 @@ set history=700
 set hlsearch
 set ignorecase
 set incsearch
-set laststatus=2
-set lazyredraw
 set magic
-set mat=2
 set matchpairs+=<:>
 set matchtime=2
 set noerrorbells
@@ -45,17 +42,15 @@ set number
 set ruler
 set shiftround
 set shiftwidth=4
-set showcmd
 set showmatch
-set showmode
-set si
 set smartcase
+set smartindent
 set softtabstop=4
 set splitbelow
 set splitright
 set tabstop=4
 set textwidth=79
-set tm=500
+set timeoutlen=500
 set wrap
 
 " Neovim 0.4.x
@@ -78,8 +73,6 @@ augroup configgroup
     autocmd FileType python setlocal completeopt-=preview
     autocmd FileType python setlocal textwidth=119
 
-    autocmd BufEnter *.cls setlocal filetype=java
-
     autocmd BufEnter Makefile setlocal noexpandtab
 
     autocmd BufEnter *.sh setlocal tabstop=2
@@ -89,10 +82,6 @@ augroup configgroup
     autocmd BufEnter *.js setlocal tabstop=2
     autocmd BufEnter *.js setlocal shiftwidth=2
     autocmd BufEnter *.js setlocal softtabstop=2
-
-    autocmd BufEnter *.ml setlocal tabstop=2
-    autocmd BufEnter *.ml setlocal shiftwidth=2
-    autocmd BufEnter *.ml setlocal softtabstop=2
 
     autocmd BufEnter *.yaml setlocal tabstop=2
     autocmd BufEnter *.yaml setlocal shiftwidth=2
