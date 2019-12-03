@@ -8,6 +8,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+    Plug 'Yggdroot/indentLine'
 
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
