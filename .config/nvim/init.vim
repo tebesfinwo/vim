@@ -69,8 +69,6 @@ set termguicolors
 syntax on " enable syntax processing
 colorscheme dracula
 
-let python_highlight_all = 1
-
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
@@ -81,8 +79,6 @@ augroup configgroup
     autocmd FileType python setlocal textwidth=119
 
     autocmd BufEnter *.cls setlocal filetype=java
-
-    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
 
     autocmd BufEnter Makefile setlocal noexpandtab
 
@@ -259,11 +255,8 @@ nnoremap <silent> <space>k :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p :<C-u>CocListResume<CR>
 
-
 " Airline
 let g:airline_theme = 'dracula'
-
-" coc.nvim
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
