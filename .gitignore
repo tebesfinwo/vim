@@ -2,21 +2,21 @@
 /*
 /*/
 
-!.gitignore
-!.gitconfig
-!.gitmodules
-!.tmux/*
 !.bashrc
-!.vim/*
-!.vim
-!.vimrc
-!.git-completion.bash
-!.django-completion.bash
 !.config/nvim/coc-settings.json
-!.config/nvim/init.vim
 !.config/nvim/ginit.vim
-!.tmux.conf
+!.config/nvim/init.vim
+!.django-completion.bash
 !.emacs.d/
+!.git-completion.bash
+!.gitconfig
+!.gitignore
+!.gitmodules
 !Makefile
+!.tmux/*
+!.tmux.conf
+!.vim
+!.vim/*
+!.vimrc
 
 .vim/.netrwhist
