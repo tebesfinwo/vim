@@ -22,6 +22,7 @@ set smartcase
 " ================ General =================== {{{ set autoindent
 set autoread
 set backspace=indent,eol,start
+set conceallevel=0
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set encoding=utf8
 set expandtab
