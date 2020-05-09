@@ -3,14 +3,14 @@ SHELL := /bin/bash
 
 
 .PHONY: setup-nvim
-setup-nvim: ## install NeoVim, its plugins and coc extensions
-	brew install --HEAD neovim
+setup-nvim: ## install NeoVim, its plugins
+	brew install--HEAD neovim
 	curl -fLo ~/.config/nvim/autoload/plug.vim \
 		--create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	nvim +PlugInstall \
 		+PlugUpgrade \
-		"+CocInstall coc-snippets coc-css coc-html coc-json coc-python coc-tsserver coc-sh" \
+		"+LspInstall pyls bashls ccls hie jsonls metals rust_analyzer vimls" \
 		+qa
 
 
