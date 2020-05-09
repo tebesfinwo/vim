@@ -28,8 +28,6 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Airline
 let g:airline_theme = 'dracula'
-let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
-let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
 " fzf
 let g:fzf_action = {
