@@ -24,8 +24,10 @@ setup-haskell: ## install GHC, cabal-install and Stack
 
 .PHONY: setup-python
 setup-python: ## install Python and its goodies
-	brew install pyenv
-	pip install "python-language-server[all]"
+	brew install pipx
+	pipx ensurepath
+	pipx install poetry
+	pipx install "python-language-server[all]"
 
 
 .PHONY: setup-npm
@@ -38,7 +40,7 @@ setup-npm: ## install stable version of npm and node
 .PHONY: setup-local-development
 setup-local-development: ## setup local development
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	brew install tmux git jq tree pyenv awscli
+	brew install tmux git jq tree awscli
 	$(MAKE) setup-nvim
 	$(MAKE) setup-npm
 	$(MAKE) setup-python
