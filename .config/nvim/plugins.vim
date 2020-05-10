@@ -91,7 +91,7 @@ inoremap <silent><expr> <TAB>
     \ <SID>check_back_space() ? "\<TAB>" :
     \ deoplete#manual_complete()
 
-sign define LspDiagnosticsErrorSign text=✖
-sign define LspDiagnosticsWarningSign text=⚠
-sign define LspDiagnosticsInformationSign text=ℹ
-sign define LspDiagnosticsHintSign text=➤
+let g:LspDiagnosticsErrorSign = '✖'
+let g:LspDiagnosticsWarningSign = '⚠'
+let g:LspDiagnosticsInformationSign = 'ℹ'
+let g:LspDiagnosticsHintSign = '➤'
