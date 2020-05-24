@@ -10,7 +10,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
     Plug 'Yggdroot/indentLine'
-    Plug 'ncm2/float-preview.nvim'
 
     Plug 'neovim/nvim-lsp'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -47,9 +46,6 @@ tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
-
-" float-preview.nvim
-let g:float_preview#docked = 1
 
 "  Deoplete
 let g:deoplete#enable_at_startup = 1
