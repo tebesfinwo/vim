@@ -53,7 +53,6 @@ let g:deoplete#enable_at_startup = 1
 " nvim-lsp
 lua << END
   require'nvim_lsp'.bashls.setup{}
-  require'nvim_lsp'.ccls.setup{}
   require'nvim_lsp'.hie.setup{}
   require'nvim_lsp'.jsonls.setup{}
   require'nvim_lsp'.metals.setup{}
