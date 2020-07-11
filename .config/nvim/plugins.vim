@@ -10,6 +10,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
     Plug 'Yggdroot/indentLine'
+    Plug 'tpope/vim-fugitive'
 
     Plug 'neovim/nvim-lsp'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
