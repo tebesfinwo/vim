@@ -18,6 +18,10 @@ call plug#end()
 
 filetype plugin indent on
 
+" Python configuration needed by plugins
+let g:loaded_python_provider = 0
+let g:python3_host_prog = expand('~/.pyenv/versions/py3nvim/bin/python')
+
 " Nerd Tree
 let NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeWinPos = 'left'
