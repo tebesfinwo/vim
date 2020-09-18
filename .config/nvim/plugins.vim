@@ -5,14 +5,13 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
     Plug 'psliwka/vim-smoothie'
     Plug 'rizzatti/dash.vim'
-    Plug 'ryanoasis/vim-devicons'
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
     Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
     Plug 'Yggdroot/indentLine'
     Plug 'tpope/vim-fugitive'
 
-    Plug 'neovim/nvim-lsp'
+    Plug 'neovim/nvim-lspconfig'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/deoplete-lsp'
 call plug#end()
