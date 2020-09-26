@@ -82,6 +82,10 @@ augroup configgroup
     autocmd BufEnter *.yaml setlocal shiftwidth=2
     autocmd BufEnter *.yaml setlocal softtabstop=2
 
+    autocmd BufEnter *.vim setlocal tabstop=2
+    autocmd BufEnter *.vim setlocal shiftwidth=2
+    autocmd BufEnter *.vim setlocal softtabstop=2
+
     autocmd FileType haskell setlocal tabstop=2
     autocmd FileType haskell setlocal shiftwidth=2
     autocmd FileType haskell setlocal softtabstop=2
