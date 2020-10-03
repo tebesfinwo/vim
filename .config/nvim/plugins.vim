@@ -28,7 +28,6 @@ let g:NERDTreeWinPos = 'left'
 let g:NERDTreeWinSize=35
 map <C-n> :NERDTreeToggle<CR>
 
-
 " Airline
 let g:airline_theme = 'dracula'
 
@@ -51,10 +50,14 @@ tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
+
 "  Deoplete
 let g:deoplete#enable_at_startup = 1
 
+
 " nvim-lsp
+set completeopt-=preview
+
 lua << END
   require'nvim_lsp'.bashls.setup{}
   require'nvim_lsp'.hie.setup{}
@@ -64,6 +67,11 @@ lua << END
   require'nvim_lsp'.rust_analyzer.setup{}
   require'nvim_lsp'.vimls.setup{}
 END
+
+augroup lsp
+  autocmd!
+  autocmd Filetype python,haskell,scala,rust,bash,css, setlocal omnifunc=v:lua.vim.lsp.omnifunc
+augroup end
 
 function! s:ConfigureBuffer()
     nnoremap <buffer> <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
@@ -89,8 +97,3 @@ inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
     \ <SID>check_back_space() ? "\<TAB>" :
     \ deoplete#manual_complete()
-
-let g:LspDiagnosticsErrorSign = '✖'
-let g:LspDiagnosticsWarningSign = '⚠'
-let g:LspDiagnosticsInformationSign = 'ℹ'
-let g:LspDiagnosticsHintSign = '➤'
