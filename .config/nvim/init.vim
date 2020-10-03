@@ -65,6 +65,7 @@ augroup configgroup
     autocmd FileType haskell,python autocmd BufWritePre <buffer> %s/\s\+$//e
 
     autocmd FileType python setlocal commentstring=#\ %s
+    autocmd FileType python setlocal completeopt-=preview
     autocmd FileType python setlocal textwidth=119
 
     autocmd BufEnter Makefile setlocal noexpandtab
