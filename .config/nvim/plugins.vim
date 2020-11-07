@@ -73,20 +73,18 @@ augroup lsp
   autocmd Filetype python,haskell,scala,rust,bash,css, setlocal omnifunc=v:lua.vim.lsp.omnifunc
 augroup end
 
-function! s:ConfigureBuffer()
-    nnoremap <buffer> <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
-    nnoremap <buffer> <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-    nnoremap <buffer> <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-    nnoremap <buffer> <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-    nnoremap <buffer> <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-    nnoremap <buffer> <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-    nnoremap <buffer> <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-    nnoremap <buffer> <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+  nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+  nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+  nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+  nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+  nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+  nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+  nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+  nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 
-    if exists('+signcolumn')
-      setlocal signcolumn=yes
-    endif
-endfunction
+  if exists('+signcolumn')
+    setlocal signcolumn=yes
+  endif
 
 function! s:check_back_space() abort "{{{
   let col = col('.') - 1
