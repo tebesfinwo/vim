@@ -59,6 +59,15 @@ let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
 
 lua << END
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+      underline = true,
+      virtual_text = false,
+      signs = true,
+      update_in_insert = true,
+    }
+  )
+
   require'nvim_lsp'.bashls.setup{}
   require'nvim_lsp'.hie.setup{}
   require'nvim_lsp'.jsonls.setup{}
@@ -73,18 +82,22 @@ augroup lsp
   autocmd Filetype python,haskell,scala,rust,bash,css, setlocal omnifunc=v:lua.vim.lsp.omnifunc
 augroup end
 
-  nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
-  nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-  nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-  nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-  nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-  nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-  nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-  nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 
-  if exists('+signcolumn')
-    setlocal signcolumn=yes
-  endif
+nnoremap <silent> sd    <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+nnoremap <silent> [g    <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> ]g    <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+
+if exists('+signcolumn')
+  setlocal signcolumn=yes
+endif
 
 function! s:check_back_space() abort "{{{
   let col = col('.') - 1
