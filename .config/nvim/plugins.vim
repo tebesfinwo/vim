@@ -1,7 +1,8 @@
 call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'dracula/vim', { 'as': 'dracula' }
-    Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}
+    Plug 'junegunn/fzf.vim'
     Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
     Plug 'psliwka/vim-smoothie'
     Plug 'rizzatti/dash.vim'
@@ -36,6 +37,11 @@ let g:fzf_action = {
 \   'ctrl-t': 'tab split',
 \   'ctrl-x': 'split',
 \   'ctrl-v': 'vsplit' }
+
+nnoremap <C-p> :GFiles<CR>
+" Install https://github.com/ggreer/the_silver_searcher
+nnoremap <C-g> :Ag<CR>
+nnoremap <silent><leader>l :Buffers<CR>
 
 
 " vim-smoothie
