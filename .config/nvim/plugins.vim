@@ -68,13 +68,13 @@ lua << END
     }
   )
 
-  require'nvim_lsp'.bashls.setup{}
-  require'nvim_lsp'.hie.setup{}
-  require'nvim_lsp'.jsonls.setup{}
-  require'nvim_lsp'.metals.setup{}
-  require'nvim_lsp'.pyls.setup{}
-  require'nvim_lsp'.rust_analyzer.setup{}
-  require'nvim_lsp'.vimls.setup{}
+  require'lspconfig'.bashls.setup{}
+  require'lspconfig'.hie.setup{}
+  require'lspconfig'.jsonls.setup{}
+  require'lspconfig'.metals.setup{}
+  require'lspconfig'.pyls.setup{}
+  require'lspconfig'.rust_analyzer.setup{}
+  require'lspconfig'.vimls.setup{}
 END
 
 augroup lsp
