@@ -6,6 +6,7 @@
 !.config/nvim/coc-settings.json
 !.config/nvim/ginit.vim
 !.config/nvim/init.vim
+!.config/nvim/lua/lsp/*
 !.config/nvim/plugins.vim
 !.django-completion.bash
 !.emacs.d/

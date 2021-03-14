@@ -74,15 +74,14 @@ lua << END
       update_in_insert = true,
     }
   )
-
-  require'lspconfig'.bashls.setup{}
-  require'lspconfig'.hie.setup{}
-  require'lspconfig'.jsonls.setup{}
-  require'lspconfig'.metals.setup{}
-  require'lspconfig'.pyls.setup{}
-  require'lspconfig'.rust_analyzer.setup{}
-  require'lspconfig'.vimls.setup{}
 END
+
+luafile ~/.config/nvim/lua/lsp/bashls.lua
+luafile ~/.config/nvim/lua/lsp/hls.lua
+luafile ~/.config/nvim/lua/lsp/jsonls.lua
+luafile ~/.config/nvim/lua/lsp/metals.lua
+luafile ~/.config/nvim/lua/lsp/pyls.lua
+luafile ~/.config/nvim/lua/lsp/rust-analyzer.lua
 
 augroup lsp
   autocmd!
