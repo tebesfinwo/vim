@@ -1,0 +1,7 @@
+require("plugins.airline")
+require("plugins.deoplete")
+require("plugins.vim-smoothie")
+require("plugins.nvim-lspconfig")
+require("plugins.fzf")
+require("plugins.nerdtree")
+require("plugins.vim-tmux-navigator")

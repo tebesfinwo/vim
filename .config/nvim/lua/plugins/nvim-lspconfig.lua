@@ -50,6 +50,8 @@ local on_attach = function(client, bufnr)
 	end
 end
 
+vim.api.nvim_command("set completeopt-=preview")
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
 		underline = true,

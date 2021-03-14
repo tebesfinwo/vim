@@ -24,48 +24,7 @@ filetype plugin indent on
 let g:loaded_python_provider = 0
 let g:python3_host_prog = expand('~/.pyenv/versions/py3nvim/bin/python')
 
-" Nerd Tree
-let NERDTreeIgnore = ['\.pyc$']
-let g:NERDTreeWinPos = 'left'
-let g:NERDTreeWinSize=35
-map <C-n> :NERDTreeToggle<CR>
-
-" Airline
-let g:airline_theme = 'dracula'
-
-" fzf
-let g:fzf_action = {
-\   'ctrl-t': 'tab split',
-\   'ctrl-x': 'split',
-\   'ctrl-v': 'vsplit' }
-
-nnoremap <C-p> :GFiles<CR>
-" Install https://github.com/ggreer/the_silver_searcher
-nnoremap <C-g> :Ag<CR>
-nnoremap <silent><leader>l :Buffers<CR>
-
-
-" vim-smoothie
-let g:smoothie_no_default_mappings = v:true
-nmap <C-d> <Plug>(SmoothieDownwards)
-nmap <C-e> <Plug>(SmoothieUpwards)
-
-
-" Tmux navigator
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
-
-
-"  Deoplete
-let g:deoplete#enable_at_startup = 1
-
-
-" nvim-lsp
-set completeopt-=preview
-
-luafile ~/.config/nvim/lua/plugins/nvim-lspconfig.lua
+luafile ~/.config/nvim/lua/plugins/init.lua
 
 if exists('+signcolumn')
   setlocal signcolumn=yes
