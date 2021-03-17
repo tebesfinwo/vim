@@ -68,6 +68,7 @@ local servers = {
     "pyls",
     "hls",
     "rust_analyzer",
+    "terraformls",
  }
 
 for _, lsp in ipairs(servers) do
