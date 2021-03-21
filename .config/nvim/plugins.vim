@@ -14,9 +14,12 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'tpope/vim-fugitive'
     Plug 'luochen1990/rainbow'
 
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'hrsh7th/vim-vsnip-integ'
+
     Plug 'neovim/nvim-lspconfig'
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'Shougo/deoplete-lsp'
+    Plug 'hrsh7th/nvim-compe'
+    Plug 'onsails/lspkind-nvim'
 call plug#end()
 
 filetype plugin indent on
@@ -30,13 +33,3 @@ luafile ~/.config/nvim/lua/plugins/init.lua
 if exists('+signcolumn')
   setlocal signcolumn=yes
 endif
-
-function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
-
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ deoplete#manual_complete()
