@@ -70,6 +70,7 @@ local servers = {
     "rust_analyzer",
     "terraformls",
     "sumneko_lua",
+    "gopls",
  }
 
 for _, lsp in ipairs(servers) do
