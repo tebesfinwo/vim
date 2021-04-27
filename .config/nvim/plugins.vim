@@ -1,5 +1,4 @@
 call plug#begin(expand('~/.config/nvim/plugged'))
-    Plug 'christoomey/vim-tmux-navigator'
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'sheerun/vim-polyglot'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}
