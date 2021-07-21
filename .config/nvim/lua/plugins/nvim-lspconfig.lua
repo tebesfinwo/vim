@@ -65,7 +65,7 @@ local servers = {
     "bashls",
     "jsonls",
     "metals",
-    "pyls",
+    "pylsp",
     "hls",
     "rust_analyzer",
     "terraformls",
