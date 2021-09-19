@@ -68,6 +68,7 @@ local servers = {
     "rust_analyzer",
     "terraformls",
     "gopls",
+    "zls",
  }
 
 for _, lsp in ipairs(servers) do
