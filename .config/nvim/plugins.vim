@@ -22,14 +22,5 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'onsails/lspkind-nvim'
 call plug#end()
 
-filetype plugin indent on
-
-" Python configuration needed by plugins
-let g:loaded_python_provider = 0
-let g:python3_host_prog = expand('~/.pyenv/versions/py3nvim/bin/python')
 
 luafile ~/.config/nvim/lua/plugins/init.lua
-
-if exists('+signcolumn')
-  setlocal signcolumn=yes
-endif
