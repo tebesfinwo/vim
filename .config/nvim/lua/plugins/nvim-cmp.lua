@@ -5,6 +5,7 @@ vim.o.completeopt = 'menu,menuone,noselect'
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
+
 cmp.setup {
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -17,16 +18,16 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    ['<TAB>'] = function(fallback)
-      if vim.fn.pumvisible() == 1 then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
       else
         fallback()
       end
     end,
-    ['<S-TAB>'] = function(fallback)
-      if vim.fn.pumvisible() == 1 then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
       else
         fallback()
       end
@@ -37,3 +38,19 @@ cmp.setup {
     { name = 'buffer' },
   },
 }
+
+-- Use buffer source for `/`.
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- Use cmdline & path source for ':'.
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
