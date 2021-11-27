@@ -15,6 +15,9 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+    Plug 'nvim-lua/plenary.nvim' " required by nvim-metals
+    Plug 'scalameta/nvim-metals', { 'for': 'scala' }
+
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'
