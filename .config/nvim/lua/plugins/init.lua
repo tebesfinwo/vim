@@ -5,7 +5,7 @@ require("plugins.fzf")
 require("plugins.nerdtree")
 require("plugins.rainbow")
 require("plugins.nvim-cmp")
-require("plugins.lspkind")
+-- require("plugins.lspkind")
 require("plugins.nvim-treesitter")
 
 vim.cmd("filetype plugin indent on")
