@@ -18,6 +18,9 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'nvim-lua/plenary.nvim' " required by nvim-metals
     Plug 'scalameta/nvim-metals', { 'for': 'scala' }
 
+    Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+    Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'
