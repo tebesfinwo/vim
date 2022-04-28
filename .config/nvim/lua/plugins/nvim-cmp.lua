@@ -7,6 +7,15 @@ vim.o.completeopt = 'menu,menuone,noselect'
 local cmp = require 'cmp'
 
 cmp.setup {
+  snippet = {
+      expand = function(args)
+          vim.fn["vsnip#anonymous"](args.body)
+      end,
+  },
+  window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+  },
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -33,14 +42,17 @@ cmp.setup {
       end
     end,
   },
-  sources = {
+  sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'vsnip' },
+  }, {
     { name = 'buffer' },
-  },
+  }),
 }
 
 -- Use buffer source for `/`.
 cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' }
   }
@@ -48,6 +60,7 @@ cmp.setup.cmdline('/', {
 
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
     { name = 'path' }
   }, {
