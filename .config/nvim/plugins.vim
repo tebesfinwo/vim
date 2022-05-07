@@ -9,9 +9,9 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
     Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
-    Plug 'Yggdroot/indentLine'
     Plug 'tpope/vim-fugitive'
     Plug 'luochen1990/rainbow'
+    Plug 'lukas-reineke/indent-blankline.nvim'
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 

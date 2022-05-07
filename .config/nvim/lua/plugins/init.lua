@@ -7,6 +7,7 @@ require("plugins.rainbow")
 require("plugins.nvim-cmp")
 require("plugins.nvim-treesitter")
 require("plugins.bufferline")
+require("plugins.indent-blankline")
 
 vim.cmd("filetype plugin indent on")
 
