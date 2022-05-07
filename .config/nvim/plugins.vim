@@ -16,6 +16,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     Plug 'nvim-lua/plenary.nvim' " required by nvim-metals
+    Plug 'mfussenegger/nvim-dap' " required by nvim-metals
     Plug 'scalameta/nvim-metals', { 'for': 'scala' }
 
     Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
