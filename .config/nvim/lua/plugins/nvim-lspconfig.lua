@@ -61,7 +61,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
 local servers = {
     "bashls",
-    "jsonls",
     "pylsp",
     "hls",
     "rust_analyzer",
