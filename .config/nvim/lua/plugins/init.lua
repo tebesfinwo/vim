@@ -5,7 +5,6 @@ require("plugins.fzf")
 require("plugins.nerdtree")
 require("plugins.rainbow")
 require("plugins.nvim-cmp")
--- require("plugins.lspkind")
 require("plugins.nvim-treesitter")
 require("plugins.bufferline")
 
