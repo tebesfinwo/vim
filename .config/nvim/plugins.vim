@@ -11,7 +11,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
     Plug 'vim-airline/vim-airline'
     Plug 'tpope/vim-fugitive'
     Plug 'luochen1990/rainbow'
-    Plug 'lukas-reineke/indent-blankline.nvim'
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
