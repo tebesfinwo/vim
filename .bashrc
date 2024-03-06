@@ -1,4 +1,4 @@
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=/opt/homebrew/bin/nvim
 export TERM=xterm-256color
 
 #
@@ -63,3 +63,9 @@ fi
 
 # Pipx autocompletion
 eval "$(register-python-argcomplete pipx)"
+
+# Created by `pipx` on 2022-07-12 02:26:05
+export PATH="$PATH:/Users/junhanooi/.local/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
